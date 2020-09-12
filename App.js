@@ -6,7 +6,7 @@ import storage from './src/redux/store';
 import {PersistGate} from 'redux-persist/integration/react';
 const {store, persistor} = storage;
 
-import Login from './src/screens/Login';
+import Register from './src/screens/Register';
 
 const App = () => {
   return (
@@ -14,7 +14,7 @@ const App = () => {
       <Provider store={store}>
         <PersistGate persistor={persistor}>
           <View style={{backgroundColor: '#F6F7F8', flex: 1}}>
-            <Login />
+            <Register />
           </View>
         </PersistGate>
       </Provider>
