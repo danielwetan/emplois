@@ -10,6 +10,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-community/async-storage": "^1.12.0",
     "axios": "^0.20.0",
     "babel-plugin-dotenv-import": "^2.1.0",
     "react": "16.13.1",
