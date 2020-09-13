@@ -75,7 +75,7 @@ module.exports = {
     color: '#1F2A36',
     fontFamily: 'OpenSans-SemiBold',
     fontSize: 18,
-    marginBottom: 30,
+    marginBottom: 10,
   },
   social: {
     color: '#9EA0A5',

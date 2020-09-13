@@ -3,7 +3,13 @@ import {View, Text, TextInput, TouchableOpacity, Image, ScrollView} from 'react-
 import {Icon} from  'react-native-elements';
 import styles from '../styles/Profile';
 import image from '../assets/images/profile.jpg';
+import Portofolio from '../components/Portofolio';
+import Experience from '../components/Experience';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
+
 const Profile = () => {
+  const Tab = createBottomTabNavigator();
   return(
     <>
       <ScrollView style={styles.mainContainer} showsVerticalScrollIndicator={false}>
@@ -30,6 +36,28 @@ const Profile = () => {
             <Text style={styles.buttonText}>Edit profile</Text>
           </TouchableOpacity>
 
+          <View style={{marginBottom: 30, marginRight: 100,}}>
+            <Text style={styles.skillTitle}>Skill</Text>
+            <View style={{flexDirection: 'row', width: 300,}}>
+              <View>
+                <Text style={{backgroundColor: '#FBB017', padding: 5, margin: 5, borderRadius: 4,}}>
+                   <Text style={{color: '#FFFFFF', fontSize: 14, fontFamily: 'OpenSans-Bold'}}>PHP</Text>
+                </Text>
+              </View>
+              <View>
+                <Text style={{backgroundColor: '#FBB017', padding: 5, margin: 5, marginRight: 5, borderRadius: 4,}}>
+                   <Text style={{color: '#FFFFFF', fontSize: 14, fontFamily: 'OpenSans-Bold'}}>Node.js</Text>
+                </Text>
+              </View>
+              <View>
+                <Text style={{backgroundColor: '#FBB017', padding: 5, margin: 5, borderRadius: 4,}}>
+                   <Text style={{color: '#FFFFFF', fontSize: 14, fontFamily: 'OpenSans-Bold'}}>C++</Text>
+                </Text>
+              </View>
+            </View>
+          </View>
+
+
           <View style={{marginBottom: 40,}}>
             <View style={{flexDirection: 'row'}}>
               <Icon name='email-outline' type='material-community' color='#9EA0A5' />
@@ -53,13 +81,13 @@ const Profile = () => {
           </View>
         </View>
 
-
         <View style={styles.thirdContainer}>
           <Text style={styles.name}>Daniel Saputra</Text>
+          <Portofolio />
+          <Experience />
         </View>
-
-
       </ScrollView>
+
     </>
   )
 }
