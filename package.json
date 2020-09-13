@@ -15,6 +15,8 @@
     "babel-plugin-dotenv-import": "^2.1.0",
     "react": "16.13.1",
     "react-native": "0.63.2",
+    "react-native-elements": "^2.3.2",
+    "react-native-vector-icons": "^7.1.0",
     "react-redux": "^7.2.1",
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
