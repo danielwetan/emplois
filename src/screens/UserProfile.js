@@ -16,7 +16,18 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 
 const Profile = ({ route }) => {
-  const { id, name, image, position, location, description } = route.params;
+  const {
+    id,
+    name,
+    image,
+    position,
+    location,
+    description,
+    email,
+    instagram,
+    github,
+    linkedin,
+  } = route.params;
   const getImg = 'http://192.168.43.186:3000/images/' + image;
 
   const Tab = createBottomTabNavigator();
@@ -111,22 +122,22 @@ const Profile = ({ route }) => {
                 type="material-community"
                 color="#9EA0A5"
               />
-              <Text style={styles.social}>danielwetan.io@gmail.com</Text>
+              <Text style={styles.social}>{email}</Text>
             </View>
 
             <View style={{ flexDirection: 'row' }}>
               <Icon name="instagram" type="antdesign" color="#9EA0A5" />
-              <Text style={styles.social}>@danielwetan</Text>
+              <Text style={styles.social}>{instagram}</Text>
             </View>
 
             <View style={{ flexDirection: 'row' }}>
               <Icon name="github" type="feather" color="#9EA0A5" />
-              <Text style={styles.social}>github.com/danielwetan</Text>
+              <Text style={styles.social}>{github}</Text>
             </View>
 
             <View style={{ flexDirection: 'row' }}>
               <Icon name="gitlab" type="feather" color="#9EA0A5" />
-              <Text style={styles.social}>gitlab.com/danielwetan</Text>
+              <Text style={styles.social}>{linkedin}</Text>
             </View>
           </View>
         </View>

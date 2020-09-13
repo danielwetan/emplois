@@ -3,7 +3,7 @@ module.exports = {
     backgroundColor: '#F6F7F8',
   },
   secondContainer: {
-    marginTop: 70,
+    marginTop: 20,
     marginLeft: 16,
     marginRight: 16,
     paddingLeft: 20,
@@ -83,5 +83,5 @@ module.exports = {
     fontSize: 16,
     marginBottom: 20,
     marginLeft: 10,
-  }
-}
+  },
+};

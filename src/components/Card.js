@@ -24,6 +24,10 @@ const Card = (props) => {
             position: props.position,
             location: props.location,
             description: props.description,
+            email: props.email,
+            instagram: props.instagram,
+            github: props.github,
+            linkedin: props.linkedin,
           })
         }>
         <Image source={{ uri: image }} style={styles.image} />

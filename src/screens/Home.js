@@ -64,6 +64,10 @@ const Home = ({ navigation }) => {
               position={d.position}
               location={d.location}
               description={d.description}
+              email={d.email}
+              instagram={d.instagram}
+              github={d.github}
+              linkedin={d.linkedin}
               nav={navigation}
             />
           );
