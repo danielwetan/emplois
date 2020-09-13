@@ -5,6 +5,9 @@ module.exports = {
     marginTop: 10,
     backgroundColor: '#F6F7F8',
   },
+  topContainer: {
+    backgroundColor: '#5E50A1',
+  },
   cardContainer: {
     flex: 1,
     flexDirection: 'row',
@@ -20,25 +23,28 @@ module.exports = {
     backgroundColor: '#FFFFFF',
     alignItems: 'center',
   },
-  image: {
-    width: 80,
-    height: 80,
-    borderRadius: 8,
-    marginLeft: 25,
-  },
-  name: {
+  date: {
+    color: '#FFFFFF',
     fontFamily: 'OpenSans-SemiBold',
-    color: '#1F2A36',
-    fontSize: 18,
-    marginTop: 12,
-    textAlign: 'center',
+    fontSize: 16,
+    marginLeft: 20,
+    marginTop: 36,
   },
-  position: {
-    fontFamily: 'OpenSans-Regular',
-    color: '#9EA0A5',
-    fontSize: 14,
-    marginTop: 2,
-    marginBottom: 40,
-    textAlign: 'center',
+  message: {
+    color: '#FFFFFF',
+    fontFamily: 'OpenSans-SemiBold',
+    fontSize: 30,
+    marginLeft: 16,
+    marginTop: 15,
+  },
+  lineImg: {
+    height: 176,
+    width: 400,
+    marginTop: -150,
+  },
+  bellImg: {
+    marginLeft: 340,
+    zIndex: 1,
+    marginTop: -30,
   }
 }
