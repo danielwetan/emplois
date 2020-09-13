@@ -10,13 +10,15 @@ import {
 } from 'react-native';
 import { Icon } from 'react-native-elements';
 import styles from '../styles/Profile';
-import image from '../assets/images/profile.jpg';
 import Portofolio from '../components/Portofolio';
 import Experience from '../components/Experience';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 
-const Profile = () => {
+const Profile = ({ route }) => {
+  const { id, name, image, position, location, description } = route.params;
+  const getImg = 'http://192.168.43.186:3000/images/' + image;
+
   const Tab = createBottomTabNavigator();
   return (
     <>
@@ -30,23 +32,16 @@ const Profile = () => {
               alignItems: 'center',
               justifyContent: 'center',
             }}>
-            <Image source={image} style={styles.image} />
+            <Image source={{ uri: getImg }} style={styles.image} />
           </View>
-          <Text style={styles.name}>Daniel Saputra</Text>
-          <Text style={styles.position}>Backend Engineer</Text>
+          <Text style={styles.name}>{name}</Text>
+          <Text style={styles.position}>{position}</Text>
           <View style={{ flexDirection: 'row' }}>
             <Icon name="map-pin" type="feather" color="#9EA0A5" size={20} />
-            <Text style={styles.social}>Jakarta, Indonesia</Text>
+            <Text style={styles.social}>{location}</Text>
           </View>
           <Text style={styles.talent}>Talent</Text>
-          <Text style={styles.about}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-            erat orci, mollis nec gravida sed, ornare quis urna. Curabitur eu
-            lacus fringilla, vestibulum risus at.
-          </Text>
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>Edit profile</Text>
-          </TouchableOpacity>
+          <Text style={styles.about}>{description}</Text>
 
           <View style={{ marginBottom: 30, marginRight: 100 }}>
             <Text style={styles.skillTitle}>Skill</Text>
@@ -137,7 +132,6 @@ const Profile = () => {
         </View>
 
         <View style={styles.thirdContainer}>
-          <Text style={styles.name}>Daniel Saputra</Text>
           <Portofolio />
           <Experience />
         </View>

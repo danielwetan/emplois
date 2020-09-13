@@ -1,6 +1,6 @@
 module.exports = {
   mainContainer: {
-    backgroundColor: '#F6F7F8'
+    backgroundColor: '#F6F7F8',
   },
   secondContainer: {
     marginTop: 70,

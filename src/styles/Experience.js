@@ -34,7 +34,7 @@ module.exports = {
   description: {
     color: '#1F2A36',
     fontFamily: 'OpenSans-Regular',
-    fontSize: 14,
+    fontSize: 16,
     marginTop: 5,
     marginBottom: 20,
     marginRight: 70,
