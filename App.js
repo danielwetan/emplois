@@ -6,7 +6,7 @@ import storage from './src/redux/store';
 import {PersistGate} from 'redux-persist/integration/react';
 const {store, persistor} = storage;
 
-import EditProfile from './src/screens/EditProfile';
+import SearchResult from './src/screens/SearchResult';
 
 const App = () => {
   return (
@@ -14,7 +14,7 @@ const App = () => {
       <Provider store={store}>
         <PersistGate persistor={persistor}>
           <View style={{backgroundColor: '#F6F7F8', flex: 1}}>
-            <EditProfile />
+            <SearchResult />
           </View>
         </PersistGate>
       </Provider>
