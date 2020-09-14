@@ -16,7 +16,6 @@ import Register from './src/screens/Register';
 import SearchResult from './src/screens/SearchResult';
 import UserProfile from './src/screens/UserProfile';
 
-
 import FontAwesome from 'react-native-vector-icons/FontAwesome5';
 import { Icon } from 'react-native-elements';
 
@@ -91,12 +90,12 @@ const App = () => {
               screenOptions={{
                 headerShown: false,
               }}>
+              <Stack.Screen name="Login" component={Login} />
+              <Stack.Screen name="Register" component={Register} />
               <Stack.Screen name="Home" component={Tabs} />
               <Stack.Screen name="Notification" component={Notification} />
               <Stack.Screen name="EditProfile" component={EditProfile} />
               <Stack.Screen name="UserProfile" component={UserProfile} />
-              <Stack.Screen name="Login" component={Login} />
-              <Stack.Screen name="Register" component={Register} />
               <Stack.Screen name="SearchResult" component={SearchResult} />
             </Stack.Navigator>
           </NavigationContainer>

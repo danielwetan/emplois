@@ -1,13 +1,16 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {View, ScrollView, Text, TextInput, TouchableOpacity} from 'react-native';
+import {View, ScrollView, Text, TextInput, TouchableOpacity, Image} from 'react-native';
 import styles from '../styles/Register'
+import image from '../assets/images/logo.png';
+
 const Register = ({navigation}) => {
   return (
     <>
       <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
-        <Text style={styles.logo}>Logo</Text>
-
+      <View style={{marginTop: 40}}>
+        <Image source={image}/>
+      </View>
         <View style={{marginBottom: 50}}>
           <Text style={styles.title}>Register</Text>
           <Text style={styles.subtitle}>Lorom ipsum dolor si amet uegas anet.</Text>
@@ -37,7 +40,7 @@ const Register = ({navigation}) => {
           <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonText}>Daftar</Text>
           </TouchableOpacity>
-          <Text style={styles.loginText}>Anda sudah punya akun? <Text style={styles.loginLink}>Masuk disini</Text></Text>
+          <Text style={styles.loginText}>Anda sudah punya akun? <Text onPress={() => navigation.navigate('Login')} style={styles.loginLink}>Masuk disini</Text></Text>
         </View>
       </ScrollView>
     </>

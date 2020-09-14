@@ -2,12 +2,14 @@ import React from 'react';
 import {View, Text, Image} from 'react-native';
 import styles from '../styles/Portofolio';
 import image from '../assets/images/profile.jpg';
-const Portofolio = () => {
+const Portofolio = (props) => {
+  const image = 'http://192.168.43.186:3000/images/' + props.image;
+
   return(
     <View style={styles.mainContainer}>
       <View style={styles.secondContainer}>
         <Image
-          source={image}
+          source={{uri: image}}
           style={styles.image}
         />
       </View>

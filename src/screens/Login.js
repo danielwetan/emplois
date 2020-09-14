@@ -1,13 +1,15 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {View, Text, TextInput, TouchableOpacity} from 'react-native';
+import {View, Text, TextInput, TouchableOpacity, Image} from 'react-native';
 import styles from '../styles/Login'
+import image from '../assets/images/logo.png';
 const Login = ({navigation}) => {
   return (
     <>
       <View style={styles.container}>
-        <Text style={styles.logo}>Logo</Text>
-
+      <View style={{marginTop: 40}}>
+        <Image source={image}/>
+      </View>
         <View style={{marginBottom: 50}}>
           <Text style={styles.title}>Login</Text>
           <Text style={styles.subtitle}>Lorom ipsum dolor si amet uegas anet.</Text>
@@ -26,9 +28,9 @@ const Login = ({navigation}) => {
         <View>
           <Text style={styles.forgotPassword}>Lupa kata sandi?</Text>
           <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>Masuk</Text>
+            <Text onPress={() => navigation.navigate('Home')} style={styles.buttonText}>Masuk</Text>
           </TouchableOpacity>
-          <Text style={styles.registerText}>Anda belum punya akun? <Text style={styles.registerLink}>Daftar disini</Text></Text>
+          <Text style={styles.registerText}>Anda belum punya akun? <Text onPress={() => navigation.navigate('Register')} style={styles.registerLink}>Daftar disini</Text></Text>
         </View>
       </View>
     </>

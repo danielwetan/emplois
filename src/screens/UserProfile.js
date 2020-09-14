@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -12,8 +12,8 @@ import { Icon } from 'react-native-elements';
 import styles from '../styles/Profile';
 import Portofolio from '../components/Portofolio';
 import Experience from '../components/Experience';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { NavigationContainer } from '@react-navigation/native';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import axios from 'axios';
 
 const Profile = ({ route }) => {
   const {
@@ -27,10 +27,15 @@ const Profile = ({ route }) => {
     instagram,
     github,
     linkedin,
+    portofolioImage,
+    experiencePosition,
+    experienceCompany,
+    experienceDate,
+    experienceDescription,
   } = route.params;
-  const getImg = 'http://192.168.43.186:3000/images/' + image;
+  const profileImg = 'http://192.168.43.186:3000/images/' + image;
 
-  const Tab = createBottomTabNavigator();
+  const Tab = createMaterialTopTabNavigator();
   return (
     <>
       <ScrollView
@@ -43,7 +48,7 @@ const Profile = ({ route }) => {
               alignItems: 'center',
               justifyContent: 'center',
             }}>
-            <Image source={{ uri: getImg }} style={styles.image} />
+            <Image source={{ uri: profileImg }} style={styles.image} />
           </View>
           <Text style={styles.name}>{name}</Text>
           <Text style={styles.position}>{position}</Text>
@@ -143,9 +148,33 @@ const Profile = ({ route }) => {
         </View>
 
         <View style={styles.thirdContainer}>
-          <Portofolio />
-          <Experience />
+          <Tab.Navigator
+          tabBarOptions={{
+            labelStyle: {
+              fontSize: 16,
+              fontFamily: 'OpenSans-SemiBold',
+              textTransform: 'none',
+            },
+            style: {
+              height: 60,
+            },
+            tabStyle: {
+              marginTop: 5,
+            },
+          }}
+          >
+
+<Tab.Screen
+name="Portofolio"
+children={()=><Portofolio image={portofolioImage}/>}
+/>
+<Tab.Screen
+name="Experience"
+children={()=><Experience position={experiencePosition} company={experienceCompany} date={experienceDate} description={experienceDescription}/>}
+/>
+          </Tab.Navigator>
         </View>
+
       </ScrollView>
     </>
   );

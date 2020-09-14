@@ -33,7 +33,7 @@ const Home = ({ navigation }) => {
 
   useEffect(() => {
     getUser();
-  }, []); // jika terjadi perubahan pada search, status, page, genre
+  }, []);
 
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
@@ -68,6 +68,11 @@ const Home = ({ navigation }) => {
               instagram={d.instagram}
               github={d.github}
               linkedin={d.linkedin}
+              portofolioImage={d.portofolio_image}
+              experiencePosition={d.experience_position}
+              experienceCompany={d.experience_company}
+              experienceDate={d.experience_date}
+              experienceDescription={d.experience_description}
               nav={navigation}
             />
           );

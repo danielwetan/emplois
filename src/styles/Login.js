@@ -3,7 +3,8 @@ module.exports = {
     marginLeft: 16,
     marginRight: 16,
     marginTop: 10,
-    backgroundColor: '#F6F7F8'
+    backgroundColor: '#F6F7F8',
+    flex: 1,
   },
   logo: {
     color: '#46505C',

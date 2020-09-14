@@ -14,15 +14,9 @@ import image from '../assets/images/profile.jpg';
 import uploadImage from '../assets/images/upload.png';
 import photoRes from '../assets/images/photo-res.png';
 import photoSize from '../assets/images/photo-size.png';
-const Profile = () => {
+const Profile = ({navigation}) => {
   const [isSelectedMobile, setSelectionMobile] = useState(false);
   const [isSelectedWeb, setSelectionWeb] = useState(false);
-  if (isSelectedMobile) {
-    setSelectionWeb(false);
-  }
-  if (isSelectedWeb) {
-    setSelectionMobile(false);
-  }
 
   return (
     <>
@@ -57,7 +51,7 @@ const Profile = () => {
           <TouchableOpacity style={styles.buttonSave}>
             <Text style={styles.buttonSaveText}>Simpan</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.buttonCancel}>
+          <TouchableOpacity style={styles.buttonCancel} onPress={() => navigation.navigate('Profile')}>
             <Text style={styles.buttonCancelText}>Batal</Text>
           </TouchableOpacity>
         </View>

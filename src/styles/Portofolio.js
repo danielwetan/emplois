@@ -1,6 +1,8 @@
 module.exports = {
   mainContainer: {
-    backgroundColor: '#F6F7F8'
+    paddingTop: 20,
+    backgroundColor: '#FFFFFF',
+    flex: 1,
   },
   secondContainer: {
     paddingTop: 10,

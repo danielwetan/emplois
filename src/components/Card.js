@@ -19,6 +19,7 @@ const Card = (props) => {
         onPress={() =>
           props.nav.navigate('UserProfile', {
             id: props.id,
+            userId: props.user_id,
             name: props.name,
             image: props.image,
             position: props.position,
@@ -28,6 +29,11 @@ const Card = (props) => {
             instagram: props.instagram,
             github: props.github,
             linkedin: props.linkedin,
+            portofolioImage: props.portofolioImage,
+            experiencePosition: props.experiencePosition,
+            experienceCompany: props.experienceCompany,
+            experienceDate: props.experienceDate,
+            experienceDescription: props.experienceDescription,
           })
         }>
         <Image source={{ uri: image }} style={styles.image} />

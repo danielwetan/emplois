@@ -13,11 +13,10 @@ import styles from '../styles/Profile';
 import image from '../assets/images/profile.jpg';
 import Portofolio from '../components/Portofolio';
 import Experience from '../components/Experience';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { NavigationContainer } from '@react-navigation/native';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
-const Profile = () => {
-  const Tab = createBottomTabNavigator();
+const Profile = ({navigation}) => {
+  const Tab = createMaterialTopTabNavigator();
   return (
     <>
       <ScrollView
@@ -44,7 +43,7 @@ const Profile = () => {
             erat orci, mollis nec gravida sed, ornare quis urna. Curabitur eu
             lacus fringilla, vestibulum risus at.
           </Text>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('EditProfile')}>
             <Text style={styles.buttonText}>Edit profile</Text>
           </TouchableOpacity>
 
@@ -137,9 +136,24 @@ const Profile = () => {
         </View>
 
         <View style={styles.thirdContainer}>
-          <Text style={styles.name}>Daniel Saputra</Text>
-          <Portofolio />
-          <Experience />
+          <Tab.Navigator
+          tabBarOptions={{
+            labelStyle: {
+              fontSize: 16,
+              fontFamily: 'OpenSans-SemiBold',
+              textTransform: 'none',
+            },
+            style: {
+              height: 60,
+            },
+            tabStyle: {
+              marginTop: 5,
+            },
+          }}
+          >
+            <Tab.Screen name="Portofolio" component={Portofolio} />
+            <Tab.Screen name="Experience" component={Experience} />
+          </Tab.Navigator>
         </View>
       </ScrollView>
     </>
