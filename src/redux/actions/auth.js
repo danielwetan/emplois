@@ -5,9 +5,9 @@ const login = (data) => {
     type: 'LOGIN',
     payload: axios({
       method: 'POST',
-      url: 'http://192.168.43.186:3000/api/v1/talent/auth/login',
+      url: 'http://52.91.125.110/api/api/v1/talent/auth/login',
       data: {
-        name: data.name,
+        email: data.email,
         password: data.password,
       },
     }),
@@ -19,7 +19,7 @@ const register = (data) => {
     type: 'REGISTER',
     payload: axios({
       method: 'post',
-      url: 'http://192.168.43.186:3000/api/v1/talent/auth/register',
+      url: 'http://52.91.125.110/api/api/v1/talent/auth/register',
       data: {
         name: data.name,
         email: data.email,

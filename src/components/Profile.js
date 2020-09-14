@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {
   View,
   Text,
@@ -10,31 +10,14 @@ import {
 } from 'react-native';
 import { Icon } from 'react-native-elements';
 import styles from '../styles/Profile';
+import image from '../assets/images/profile.jpg';
 import Portofolio from '../components/Portofolio';
 import Experience from '../components/Experience';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import axios from 'axios';
 
-const Profile = ({ route }) => {
-  const {
-    id,
-    name,
-    image,
-    position,
-    location,
-    description,
-    email,
-    instagram,
-    github,
-    linkedin,
-    portofolioImage,
-    experiencePosition,
-    experienceCompany,
-    experienceDate,
-    experienceDescription,
-  } = route.params;
-  const profileImg = 'http://52.91.125.110/api/images/' + image;
+import { connect } from "react-redux";
 
+const Profile = (props) => {
   const Tab = createMaterialTopTabNavigator();
   return (
     <>
@@ -48,16 +31,23 @@ const Profile = ({ route }) => {
               alignItems: 'center',
               justifyContent: 'center',
             }}>
-            <Image source={{ uri: profileImg }} style={styles.image} />
+            <Image source={image} style={styles.image} />
           </View>
-          <Text style={styles.name}>{name}</Text>
-          <Text style={styles.position}>{position}</Text>
+          <Text style={styles.name}>{props.auth.data.name}</Text>
+          <Text style={styles.position}>Software Engineer</Text>
           <View style={{ flexDirection: 'row' }}>
             <Icon name="map-pin" type="feather" color="#9EA0A5" size={20} />
-            <Text style={styles.social}>{location}</Text>
+            <Text style={styles.social}>Jakarta, Indonesia</Text>
           </View>
           <Text style={styles.talent}>Talent</Text>
-          <Text style={styles.about}>{description}</Text>
+          <Text style={styles.about}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+            erat orci, mollis nec gravida sed, ornare quis urna. Curabitur eu
+            lacus fringilla, vestibulum risus at.
+          </Text>
+          <TouchableOpacity style={styles.button} onPress={() => props.navigation.navigate('EditProfile')}>
+            <Text style={styles.buttonText}>Edit profile</Text>
+          </TouchableOpacity>
 
           <View style={{ marginBottom: 30, marginRight: 100 }}>
             <Text style={styles.skillTitle}>Skill</Text>
@@ -127,18 +117,19 @@ const Profile = ({ route }) => {
                 type="material-community"
                 color="#9EA0A5"
               />
-              <Text style={styles.social}>{email}</Text>
+              <Text style={styles.social}>arkademy@mail.com</Text>
             </View>
 
             <View style={{ flexDirection: 'row' }}>
               <Icon name="instagram" type="antdesign" color="#9EA0A5" />
-              <Text style={styles.social}>{instagram}</Text>
+              <Text style={styles.social}>@arkademy</Text>
             </View>
 
             <View style={{ flexDirection: 'row' }}>
               <Icon name="github" type="feather" color="#9EA0A5" />
-              <Text style={styles.social}>{github}</Text>
+              <Text style={styles.social}>github.com/arkademy</Text>
             </View>
+
           </View>
         </View>
 
@@ -158,21 +149,23 @@ const Profile = ({ route }) => {
             },
           }}
           >
-
-<Tab.Screen
-name="Portofolio"
-children={()=><Portofolio image={portofolioImage}/>}
-/>
-<Tab.Screen
-name="Experience"
-children={()=><Experience position={experiencePosition} company={experienceCompany} date={experienceDate} description={experienceDescription}/>}
-/>
+          <Tab.Screen
+            name="Portofolio"
+            children={()=><Portofolio image={'portofolio1.png'}/>}
+          />
+          <Tab.Screen
+            name="Experience"
+            children={()=><Experience position={'Engineer'} company={'Google'} date={'August 2019 - July 2020'} description={'Ut lobortis quam eu luctus placerat. Sed quis bibendum mi, nec pellentesque justo. Vivamus vehicula sem id elit sagittis, ac rutrum sapien pulvinar. Duis laoreet mauris at maximus tempus'}/>}
+          />
           </Tab.Navigator>
         </View>
-
       </ScrollView>
     </>
   );
 };
 
-export default Profile;
+const mapStateToProps = state => ({
+  auth: state.auth,
+});
+
+export default connect(mapStateToProps)(Profile)

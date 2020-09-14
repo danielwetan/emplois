@@ -12,7 +12,6 @@ import { Icon } from 'react-native-elements';
 import styles from '../styles/SearchResult';
 import image from '../assets/images/profile.jpg';
 const Card = (props) => {
-  const image = 'http://192.168.43.186:3000/images/' + props.image;
   return (
     <View style={styles.card}>
       <TouchableOpacity
@@ -36,7 +35,7 @@ const Card = (props) => {
             experienceDescription: props.experienceDescription,
           })
         }>
-        <Image source={{ uri: image }} style={styles.image} />
+        <Image source={image} style={styles.image} />
         <Text style={styles.name}>{props.name}</Text>
         <Text style={styles.position}>{props.position}</Text>
         <View style={{ flexDirection: 'row' }}>

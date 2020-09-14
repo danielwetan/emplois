@@ -5,20 +5,20 @@ import styles from '../styles/Login'
 import image from '../assets/images/logo.png';
 
 import { connect } from 'react-redux';
-import { register } from '../redux/actions/auth';
+import { login } from '../redux/actions/auth';
 
-const Login = ({navigation}) => {
+const Login = (props) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const userLogin = () => {
   const data = {
-    name: name,
-    phone_number: phoneNumber,
+    email: email,
+    password: password,
   }
   props.dispatch(login(data))
     .then(() => {
-      navigation.navigate('Home')
+      props.navigation.navigate('Home')
     })
     .catch((err) => {
       console.log(err, "here")
@@ -50,7 +50,7 @@ const Login = ({navigation}) => {
           <TouchableOpacity style={styles.button}>
             <Text onPress={userLogin} style={styles.buttonText}>Masuk</Text>
           </TouchableOpacity>
-          <Text style={styles.registerText}>Anda belum punya akun? <Text onPress={() => navigation.navigate('Register')} style={styles.registerLink}>Daftar disini</Text></Text>
+          <Text style={styles.registerText}>Anda belum punya akun? <Text onPress={() => props.navigation.navigate('Register')} style={styles.registerLink}>Daftar disini</Text></Text>
         </View>
       </View>
     </>
