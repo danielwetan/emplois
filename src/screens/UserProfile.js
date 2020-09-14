@@ -139,11 +139,6 @@ const Profile = ({ route }) => {
               <Icon name="github" type="feather" color="#9EA0A5" />
               <Text style={styles.social}>{github}</Text>
             </View>
-
-            <View style={{ flexDirection: 'row' }}>
-              <Icon name="gitlab" type="feather" color="#9EA0A5" />
-              <Text style={styles.social}>{linkedin}</Text>
-            </View>
           </View>
         </View>
 

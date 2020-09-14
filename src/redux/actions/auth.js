@@ -5,9 +5,9 @@ const login = (data) => {
     type: 'LOGIN',
     payload: axios({
       method: 'POST',
-      url: 'http://192.168.43.186:3000/auth/login',
+      url: 'http://192.168.43.186:3000/api/v1/talent/auth/login',
       data: {
-        username: data.username,
+        name: data.name,
         password: data.password,
       },
     }),
@@ -19,13 +19,12 @@ const register = (data) => {
     type: 'REGISTER',
     payload: axios({
       method: 'post',
-      url: 'http://192.168.43.186:3000/auth/register',
+      url: 'http://192.168.43.186:3000/api/v1/talent/auth/register',
       data: {
-        username: data.username,
-        full_name: data.full_name,
+        name: data.name,
         email: data.email,
+        phone_number: data.phone_number,
         password: data.password,
-        role: data.role,
       },
     }),
   };

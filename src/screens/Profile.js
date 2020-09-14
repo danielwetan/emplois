@@ -128,10 +128,6 @@ const Profile = ({navigation}) => {
               <Text style={styles.social}>github.com/danielwetan</Text>
             </View>
 
-            <View style={{ flexDirection: 'row' }}>
-              <Icon name="gitlab" type="feather" color="#9EA0A5" />
-              <Text style={styles.social}>gitlab.com/danielwetan</Text>
-            </View>
           </View>
         </View>
 

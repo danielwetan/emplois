@@ -48,7 +48,7 @@ const Login = ({navigation}) => {
         <View>
           <Text style={styles.forgotPassword}>Lupa kata sandi?</Text>
           <TouchableOpacity style={styles.button}>
-            <Text onPress={() => navigation.navigate('Home')} style={styles.buttonText}>Masuk</Text>
+            <Text onPress={userLogin} style={styles.buttonText}>Masuk</Text>
           </TouchableOpacity>
           <Text style={styles.registerText}>Anda belum punya akun? <Text onPress={() => navigation.navigate('Register')} style={styles.registerLink}>Daftar disini</Text></Text>
         </View>
