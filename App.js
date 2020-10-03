@@ -5,6 +5,7 @@ import storage from './src/redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
 const { store, persistor } = storage;
 
+import Splash from './src/screens/Splash';
 import Home from './src/screens/Home';
 import Search from './src/screens/Search';
 import Inbox from './src/screens/Inbox';
@@ -90,6 +91,7 @@ const App = () => {
               screenOptions={{
                 headerShown: false,
               }}>
+              <Stack.Screen name="Splash" component={Splash} />
               <Stack.Screen name="Login" component={Login} />
               <Stack.Screen name="Register" component={Register} />
               <Stack.Screen name="Home" component={Tabs} />

@@ -47,22 +47,22 @@ const Register = (props) => {
 
         <View style={{marginBottom: 32}}>
           <Text style={styles.label}>Email</Text>
-          <TextInput onChangeText={text => setEmail(text)} style={styles.form} placeholder="Masukan email"/>
+          <TextInput onChangeText={text => setEmail(text)} autoCapitalize="none" style={styles.form} placeholder="Masukan email"/>
         </View>
 
         <View style={{marginBottom: 32}}>
           <Text style={styles.label}>No handphone</Text>
-          <TextInput onChangeText={text => setPhoneNumber(text)} style={styles.form} placeholder="Masukan no handphone"/>
+          <TextInput onChangeText={text => setPhoneNumber(text)} keyboardType={'phone-pad'} textContentType="telephoneNumber" style={styles.form} placeholder="Masukan no handphone"/>
         </View>
 
         <View style={{marginBottom: 32}}>
           <Text style={styles.label}>Kata sandi</Text>
-          <TextInput onChangeText={text => setPassword(text)} style={styles.form} placeholder="Masukan kata sandi"/>
+          <TextInput onChangeText={text => setPassword(text)} secureTextEntry={true} style={styles.form} placeholder="Masukan kata sandi"/>
         </View>
 
         <View style={{marginBottom: 40}}>
           <Text style={styles.label}>Konfirmasi kata sandi</Text>
-          <TextInput style={styles.form} placeholder="Masukan konfirmasi kata sandi"/>
+          <TextInput style={styles.form} secureTextEntry={true} placeholder="Masukan konfirmasi kata sandi"/>
         </View>
 
         <View>
