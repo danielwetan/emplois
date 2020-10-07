@@ -15,8 +15,6 @@ import LinearGradient from 'react-native-linear-gradient';
 const Splash = ({ navigation }) => {
   return (
     <>
-
-
     <LinearGradient
       colors={['#2974FA', '#38ABFD', '#43D4FF']} style={{flex:1}}>
 

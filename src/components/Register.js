@@ -25,7 +25,7 @@ const Register = (props) => {
       props.navigation.navigate('Login')
     })
     .catch((err) => {
-      console.log(err, "here")
+      console.log(err)
     })
 }
 

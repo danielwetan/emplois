@@ -22,7 +22,7 @@ const Login = (props) => {
         props.navigation.navigate('Home');
       })
       .catch((err) => {
-        console.log(err, 'here');
+        console.log(err);
       });
   };
   return (

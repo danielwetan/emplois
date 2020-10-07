@@ -91,9 +91,6 @@ const App = () => {
               screenOptions={{
                 headerShown: false,
               }}>
-              <Stack.Screen name="Splash" component={Splash} />
-              <Stack.Screen name="Login" component={Login} />
-              <Stack.Screen name="Register" component={Register} />
               <Stack.Screen name="Home" component={Tabs} />
               <Stack.Screen name="Notification" component={Notification} />
               <Stack.Screen name="EditProfile" component={EditProfile} />
@@ -106,5 +103,10 @@ const App = () => {
     </>
   );
 };
+
+// <Stack.Screen name="Splash" component={Splash} />
+// <Stack.Screen name="Login" component={Login} />
+// <Stack.Screen name="Register" component={Register} />
+
 
 export default App;

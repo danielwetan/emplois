@@ -20,7 +20,7 @@ const Home = ({ navigation }) => {
   const getUser = () => {
     axios({
       method: 'GET',
-      url: 'http://52.91.125.110/api/api/v1/talent/home',
+      url: 'http://192.168.43.186:3000/api/v1/talent/home',
     })
       .then((res) => {
         setData(res.data.body);

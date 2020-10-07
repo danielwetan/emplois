@@ -14,15 +14,16 @@ import Card from '../components/Card';
 import axios from 'axios';
 
 const SearchResult = ({ route, navigation }) => {
-  const { search } = route.params;
+  const { search, job_type } = route.params;
   const [data, setData] = useState([]);
 
   const getUser = () => {
     axios({
       method: 'GET',
-      url: 'http://52.91.125.110/api/api/v1/talent/home',
+      url: 'http://192.168.43.186:3000/api/v1/talent/home',
       params: {
         search: search,
+        job_type: job_type,
       },
     })
       .then((res) => {
@@ -44,18 +45,23 @@ const SearchResult = ({ route, navigation }) => {
         {data.map((d) => {
           return (
             <Card
-              key={d.id}
-              id={d.user_id}
-              name={d.name}
-              image={d.image}
-              position={d.position}
-              location={d.location}
-              description={d.description}
-              email={d.email}
-              instagram={d.instagram}
-              github={d.github}
-              linkedin={d.linkedin}
-              nav={navigation}
+            key={d.id}
+            id={d.user_id}
+            name={d.name}
+            image={d.image}
+            position={d.position}
+            location={d.location}
+            description={d.description}
+            email={d.email}
+            instagram={d.instagram}
+            github={d.github}
+            linkedin={d.linkedin}
+            portofolioImage={d.portofolio_image}
+            experiencePosition={d.experience_position}
+            experienceCompany={d.experience_company}
+            experienceDate={d.experience_date}
+            experienceDescription={d.experience_description}
+            nav={navigation}
             />
           );
         })}

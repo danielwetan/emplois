@@ -15,4 +15,9 @@ module.exports = {
     alignItems: 'center',
     justifyContent: 'center',
   },
+  text: {
+    fontFamily: 'OpenSans-Regular',
+    fontSize: 16,
+    marginBottom: 30,
+  }
 }

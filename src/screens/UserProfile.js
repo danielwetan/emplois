@@ -33,7 +33,7 @@ const Profile = ({ route }) => {
     experienceDate,
     experienceDescription,
   } = route.params;
-  const profileImg = 'http://52.91.125.110/api/images/' + image;
+  const profileImg = 'http://192.168.43.186:3000/images/' + image;
 
   const Tab = createMaterialTopTabNavigator();
   return (
