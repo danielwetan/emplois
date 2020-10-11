@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   View,
   Text,
@@ -19,6 +19,7 @@ import { connect } from "react-redux";
 
 const Profile = (props) => {
   const Tab = createMaterialTopTabNavigator();
+
   return (
     <>
       <ScrollView
@@ -34,7 +35,7 @@ const Profile = (props) => {
             <Image source={image} style={styles.image} />
           </View>
           <Text style={styles.name}>{props.auth.data.name}</Text>
-          <Text style={styles.position}>Software Engineer</Text>
+          <Text style={styles.position}>{props.auth.data.position}</Text>
           <View style={{ flexDirection: 'row' }}>
             <Icon name="map-pin" type="feather" color="#9EA0A5" size={20} />
             <Text style={styles.social}>Jakarta, Indonesia</Text>

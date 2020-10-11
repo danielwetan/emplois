@@ -14,6 +14,8 @@ import dotImg from '../assets/images/dot.png';
 import Card from '../components/Card';
 import axios from 'axios';
 
+import { connect } from "react-redux";
+
 const Home = ({ navigation }) => {
   const [data, setData] = useState([]);
 
@@ -39,7 +41,7 @@ const Home = ({ navigation }) => {
     <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.topContainer}>
         <Image source={dotImg} />
-        <Text style={styles.date}>Sen, 13 September 2020</Text>
+        <Text style={styles.date}>Sun, 11 October 2020</Text>
         <View style={styles.bellImg}>
           <Icon
             name="bell"
@@ -49,7 +51,7 @@ const Home = ({ navigation }) => {
             onPress={() => navigation.navigate('Notification')}
           />
         </View>
-        <Text style={styles.message}>Hi, User!</Text>
+        <Text style={styles.message}>Hello there!</Text>
         <Image source={lineImg} style={styles.lineImg} />
       </View>
 
@@ -82,4 +84,8 @@ const Home = ({ navigation }) => {
   );
 };
 
-export default Home;
+const mapStateToProps = state => ({
+  auth: state.auth,
+});
+
+export default connect(mapStateToProps)(Home)

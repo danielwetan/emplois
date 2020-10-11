@@ -26,7 +26,7 @@ const auth = (state = initialState, action) => {
         ...state,
         isLoading: false,
         isError: false,
-        data: action.payload.data.body[0],
+        data: action.payload.data.body,
       };
     case 'LOGOUT':
       return {
